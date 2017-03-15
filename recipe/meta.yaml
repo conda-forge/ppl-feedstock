@@ -11,7 +11,7 @@ source:
   sha256: 6bc36dd4a87abc429d8f9c00c53e334e5041a9b0857cfc00dbad6ef14294aac8
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -19,10 +19,10 @@ requirements:
     - toolchain
     - libtool
     - m4
-    - gmp
+    - gmp >=5.0.1,<7
     - glpk
   run:
-    - gmp
+    - gmp >=5.0.1,<7
     - glpk
 
 test:
