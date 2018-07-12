@@ -11,18 +11,20 @@ source:
   sha256: 6bc36dd4a87abc429d8f9c00c53e334e5041a9b0857cfc00dbad6ef14294aac8
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
 
 requirements:
   build:
-    - toolchain
     - libtool
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - m4
-    - gmp >=5.0.1,<7
+    - gmp
     - glpk
   run:
-    - gmp >=5.0.1,<7
+    - gmp
     - glpk
 
 test:
