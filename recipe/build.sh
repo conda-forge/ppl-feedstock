@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export CFLAGS="-O2 -g -fPIC $CFLAGS -Wno-double-promotion"
+export CXXFLAGS="$CXXFLAGS -Wno-double-promotion -Wno-deprecated-dynamic-exception-spec"
 
 chmod +x configure
 
