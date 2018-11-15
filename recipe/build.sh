@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export CXXFLAGS="$CXXFLAGS -Wno-double-promotion -Wno-deprecated-dynamic-exception-spec"
+export CXXFLAGS="$CXXFLAGS -Wno-double-promotion -Wno-deprecated-dynamic-exception-spec -Wno-reserved-id-macro"
 
 chmod +x configure
 
