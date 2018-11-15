@@ -1,7 +1,6 @@
 #!/bin/bash
 
-export LD_LIBRARY_PATH=$PREFIX/lib:$LD_LIBRARY_PATH
-export CFLAGS="-O2 -g -fPIC $CFLAGS"
+export CXXFLAGS="$CXXFLAGS -Wno-double-promotion -Wno-deprecated-dynamic-exception-spec -Wno-reserved-id-macro"
 
 chmod +x configure
 
