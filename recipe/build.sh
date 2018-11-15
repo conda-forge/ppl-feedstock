@@ -1,7 +1,6 @@
 #!/bin/bash
 
-export LD_LIBRARY_PATH=$PREFIX/lib:$LD_LIBRARY_PATH
-export CFLAGS="-O2 -g -fPIC $CFLAGS"
+export CFLAGS="-O2 -g -fPIC $CFLAGS -Wno-double-promotion"
 
 chmod +x configure
 
