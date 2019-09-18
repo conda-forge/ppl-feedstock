@@ -9,10 +9,16 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: http://bugseng.com/products/ppl/download/ftp/releases/{{ version }}/{{ name }}-{{ version }}.tar.gz
   sha256: 6bc36dd4a87abc429d8f9c00c53e334e5041a9b0857cfc00dbad6ef14294aac8
+  patches:
+    - cling.patch
 
 build:
-  number: 1002
+  number: 1003
   skip: true  # [win]
+  run_exports:
+    # pin exact version of ppl, there has not been a release in many years so
+    # we have no idea what the next version is going to look like
+    - {{ pin_subpackage("ppl", max_pin="x.x") }}
 
 requirements:
   build:
@@ -47,3 +53,4 @@ about:
 extra:
   recipe-maintainers:
     - isuruf
+    - saraedum
