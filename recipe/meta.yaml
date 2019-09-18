@@ -18,7 +18,7 @@ build:
   run_exports:
     # pin exact version of ppl, there has not been a release in many years so
     # we have no idea what the next version is going to look like
-    - ppl
+    - {{ pin_subpackage("ppl", max_pin="x.x") }}
 
 requirements:
   build:
