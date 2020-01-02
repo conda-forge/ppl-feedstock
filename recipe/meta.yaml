@@ -23,6 +23,7 @@ build:
 requirements:
   build:
     - libtool
+    - make
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:

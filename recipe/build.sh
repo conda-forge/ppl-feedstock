@@ -2,6 +2,10 @@
 
 export CXXFLAGS="$CXXFLAGS -Wno-double-promotion -Wno-deprecated-dynamic-exception-spec -Wno-reserved-id-macro"
 
+if [[ "$CI" == "drone" ]]; then
+  export CPU_COUNT=16
+fi
+
 chmod +x configure
 
 ./configure --prefix=$PREFIX \
