@@ -14,6 +14,7 @@ chmod +x configure
             --with-gmp-include="$PREFIX/include" \
             --with-gmp-lib="$PREFIX/lib" \
             --enable-coefficients=mpz \
+            --disable-fpmath \
             --enable-interfaces=c,c++
 make
 # Following timeouts on CI
