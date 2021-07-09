@@ -44,7 +44,7 @@ test:
 
 about:
   home: http://bugseng.com/products/ppl/
-  license: GPL v3+
+  license: GPL-3.0-or-later
   license_file: {{ SRC_DIR }}/COPYING
   summary: |
     The Parma Polyhedra Library (PPL) provides numerical abstractions
