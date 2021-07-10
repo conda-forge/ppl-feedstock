@@ -18,21 +18,7 @@ Current build status
 ====================
 
 
-<table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://travis-ci.com/conda-forge/ppl-feedstock">
-        <img alt="macOS" src="https://img.shields.io/travis/com/conda-forge/ppl-feedstock/master.svg?label=macOS">
-      </a>
-    </td>
-  </tr><tr>
-    <td>Drone</td>
-    <td>
-      <a href="https://cloud.drone.io/conda-forge/ppl-feedstock">
-        <img alt="linux" src="https://img.shields.io/drone/build/conda-forge/ppl-feedstock/master.svg?label=Linux">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>
