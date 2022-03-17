@@ -17,7 +17,10 @@ chmod +x configure
             --disable-fpmath \
             --disable-static \
             --enable-interfaces=c,c++
-make
+
+sed -i.bak "s@$PREFIX@\${exec_prefix}@g" src/ppl-config.cc
+
+make -j${CPU_COUNT}
 # Following timeouts on CI
 # make check
 make install
