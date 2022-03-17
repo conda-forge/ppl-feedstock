@@ -15,6 +15,7 @@ chmod +x configure
             --with-gmp-lib="$PREFIX/lib" \
             --enable-coefficients=mpz \
             --disable-fpmath \
+            --disable-static \
             --enable-interfaces=c,c++
 make
 # Following timeouts on CI
