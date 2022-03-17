@@ -41,8 +41,9 @@ test:
     - test -f ${PREFIX}/lib/libppl.dylib  # [osx]
     - test -f ${PREFIX}/lib/libppl.so     # [linux]
     - ppl-config --ldflags | grep "\-lppl"
-    - ppl-config --ldflags
-    - ppl-config --cppflags
+    - ppl-config --ldflags | grep -v "exec_prefix"
+    - ppl-config --cflags | grep -v "exec_prefix"
+    - ppl-config --cxxflags | grep -v "exec_prefix"
 
 about:
   home: http://bugseng.com/products/ppl/
