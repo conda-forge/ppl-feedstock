@@ -2,18 +2,18 @@
 {% set name = "ppl" %}
 
 package:
-  name: {{ name }}
+  name: ppl
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: http://bugseng.com/products/ppl/download/ftp/releases/{{ version }}/{{ name }}-{{ version }}.tar.gz
+  url: http://bugseng.com/products/ppl/download/ftp/releases/{{ version }}/ppl-{{ version }}.tar.gz
   sha256: 6bc36dd4a87abc429d8f9c00c53e334e5041a9b0857cfc00dbad6ef14294aac8
   patches:
     - cling.patch
+    - binary-prefix.diff
 
 build:
-  number: 1004
+  number: 1005
   skip: true  # [win]
   run_exports:
     # pin exact version of ppl, there has not been a release in many years so
@@ -37,10 +37,13 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/include/{{ name }}.hh
-    - test -f ${PREFIX}/lib/lib{{ name }}.a
-    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]
-    - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]
+    - test -f ${PREFIX}/include/ppl.hh
+    - test -f ${PREFIX}/lib/libppl.dylib  # [osx]
+    - test -f ${PREFIX}/lib/libppl.so     # [linux]
+    - ppl-config --ldflags | grep "\-lppl"
+    - ppl-config --ldflags | grep -v "exec_prefix"
+    - ppl-config --cflags | grep -v "exec_prefix"
+    - ppl-config --cxxflags | grep -v "exec_prefix"
 
 about:
   home: http://bugseng.com/products/ppl/

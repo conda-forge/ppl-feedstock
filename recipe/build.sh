@@ -15,8 +15,13 @@ chmod +x configure
             --with-gmp-lib="$PREFIX/lib" \
             --enable-coefficients=mpz \
             --disable-fpmath \
+            --disable-static \
             --enable-interfaces=c,c++
-make
+
+sed -i.bak "s@$PREFIX/lib@\${exec_prefix}/lib@g" src/ppl-config.cc
+sed -i.bak "s@$PREFIX/include@\${exec_prefix}/include@g" src/ppl-config.cc
+
+make -j${CPU_COUNT}
 # Following timeouts on CI
 # make check
 make install
