@@ -3,7 +3,7 @@
 
 package:
   name: ppl
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://support.bugseng.com/ppl/download/ftp/releases/{{ version }}/ppl-{{ version }}.tar.gz
@@ -27,6 +27,7 @@ requirements:
     - gnuconfig  # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ stdlib('c') }}
   host:
     - m4
     - gmp
