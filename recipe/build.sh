@@ -3,6 +3,7 @@
 cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
 export CXXFLAGS="$CXXFLAGS -Wno-double-promotion -Wno-deprecated-dynamic-exception-spec -Wno-reserved-id-macro"
+export CXXFLAGS="$CXXFLAGS -std=c++14"
 
 if [[ "$CI" == "drone" ]]; then
   export CPU_COUNT=16

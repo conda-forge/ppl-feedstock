@@ -3,17 +3,17 @@
 
 package:
   name: ppl
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
-  url: http://bugseng.com/products/ppl/download/ftp/releases/{{ version }}/ppl-{{ version }}.tar.gz
+  url: https://support.bugseng.com/ppl/download/ftp/releases/{{ version }}/ppl-{{ version }}.tar.gz
   sha256: 6bc36dd4a87abc429d8f9c00c53e334e5041a9b0857cfc00dbad6ef14294aac8
   patches:
     - cling.patch
     - binary-prefix.diff
 
 build:
-  number: 1006
+  number: 1007
   skip: true  # [win]
   run_exports:
     # pin exact version of ppl, there has not been a release in many years so
@@ -27,6 +27,7 @@ requirements:
     - gnuconfig  # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ stdlib('c') }}
   host:
     - m4
     - gmp
@@ -46,14 +47,14 @@ test:
     - ppl-config --cxxflags | grep -v "exec_prefix"
 
 about:
-  home: http://bugseng.com/products/ppl/
+  home: https://bugseng.com/ppl
   license: GPL-3.0-or-later
   license_file: {{ SRC_DIR }}/COPYING
   summary: |
     The Parma Polyhedra Library (PPL) provides numerical abstractions
     especially targeted at applications in the field of analysis and
     verification of complex systems.
-  doc_url: http://bugseng.com/products/ppl/documentation
+  doc_url: https://support.bugseng.com/ppl/documentation/
 
 extra:
   recipe-maintainers:
